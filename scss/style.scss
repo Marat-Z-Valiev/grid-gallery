@@ -1,35 +1,81 @@
 @import url('https://fonts.googleapis.com/css?family=Titan+One');
 
-body {
-  background: #ffffff;
-  font-family: 'Titan One', cursive;
-}
-main {
-  width: 100%;
-  height: 100%;
-}
-
-h1 {
-  text-align: center;
-}
-
-.grid {
+@mixin grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 20px;
   width: 100%;
   height: 100%;
+}
+
+body {
+  background: #ffffff;
+  font-family: 'Titan One', cursive;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+.select-gallery {
+  display: flex;
+  border: 2px #000000 solid;
+  justify-content: space-evenly;
+
+  .grid-gallery {
+    cursor: pointer;
+  }
+
+  .cards-gallery {
+    cursor: pointer;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+.cards-gallery-box {
+  display: none;
+}
+
+.grid-gallery-box {
+  .grid {
+    @include grid;
+
+    img {
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+        transform: scale(1.05);
+        transition: transform 300ms ease-in-out;
+        box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.75);
+      }
+    }
+  }
+}
+
+.cards-gallery-box {
+  .grid {
+    @include grid;
+  }
 
   img {
     width: 100%;
+  }
+  .card {
+    text-align: center;
+    box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.65);
 
     &:hover {
-      cursor: pointer;
-      opacity: 0.7;
-      transform: scale(1.05);
+      transform: translateY(-10px);
       transition: transform 300ms ease-in-out;
-      box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 13px 9px 0px rgba(0, 0, 0, 0.65);
+      cursor: pointer;
     }
   }
 }

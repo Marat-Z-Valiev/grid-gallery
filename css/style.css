@@ -31,10 +31,6 @@ h1 {
   text-align: center;
 }
 
-.cards-gallery-box {
-  display: none;
-}
-
 .grid-gallery-box .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -59,6 +55,10 @@ h1 {
   transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
   -webkit-box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.75);
+}
+
+.cards-gallery-box {
+  display: none;
 }
 
 .cards-gallery-box .grid {
@@ -89,6 +89,51 @@ h1 {
   transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
   -webkit-box-shadow: 0px 13px 9px 0px rgba(0, 0, 0, 0.65);
           box-shadow: 0px 13px 9px 0px rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+}
+
+.compact-gallery-box {
+  display: none;
+}
+
+.compact-gallery-box .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.compact-gallery-box img {
+  width: 100%;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+.compact-gallery-box img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  opacity: 0.7;
+}
+
+.compact-gallery-box .card:hover .description1 {
+  opacity: 1;
+}
+
+.compact-gallery-box .description1 {
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  position: absolute;
+  width: 32%;
+  top: 40%;
+  right: 67%;
+  color: #ffffff;
+  opacity: 0;
   cursor: pointer;
 }
 
